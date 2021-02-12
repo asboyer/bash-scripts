@@ -1,1 +1,2 @@
-# Useful bash scripts i guess
+# Useful bash scripts i use
+More descriptions coming soon
