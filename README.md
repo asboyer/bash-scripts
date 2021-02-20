@@ -8,5 +8,6 @@
 
 ## Using these scripts:
 * `git clone https://github.com/asboyer2/bash-scripts.git`
-* add `/path/to/bash-scripts/bin` to your `$PATH` variable in your `.bashrc`	* **ex:** `export PATH=/usr/root/bash-scripts/bin:$PATH`
+* add `/path/to/bash-scripts/bin` to your `$PATH` variable in your `.bashrc
+	* **ex:** `export PATH=/usr/root/bash-scripts/bin:$PATH`
 * Source your `.bashrc` using the command `. .bashrc`
