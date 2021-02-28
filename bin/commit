@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-name = $1
-echo $1
+name=$1
+echo "$name"
 
 echo adding changes ...
 git add .
