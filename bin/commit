@@ -8,8 +8,7 @@ echo adding changes ...
 git add .
 echo commiting changes ...
 
-if ["$message" == ""]
-then
+if ["$message" == ""]; then
 	git commit -m "automated commit"
 else
 	git commit -m "$message"
