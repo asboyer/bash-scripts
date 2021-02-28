@@ -16,4 +16,14 @@ else
 fi
 
 echo pushing changes ...
-git push origin master
+
+if [ "$branch" == "" ]
+then
+	branch="master"
+fi
+
+if [ "$remote" == "" ]
+then
+	remote="origin"
+fi
+git push $remote $branch
