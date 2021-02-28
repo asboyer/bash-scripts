@@ -4,10 +4,12 @@ message=$1
 branch=$2
 remote=$3
 
+# adds ALL changes
 echo adding changes ...
 git add .
-echo commiting changes ...
 
+# commits changes
+echo commiting changes ...
 if [ "$message" == "" ] 
 then
 	git commit -m "automated commit"
@@ -15,13 +17,12 @@ else
 	git commit -m "$message"
 fi
 
+# pushes changes
 echo pushing changes ...
-
 if [ "$branch" == "" ]
 then
 	branch="master"
 fi
-
 if [ "$remote" == "" ]
 then
 	remote="origin"
