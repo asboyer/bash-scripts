@@ -2,3 +2,5 @@
 
 sudo apt update
 sudo apt upgrade
+echo   
+echo Everything up to date!
