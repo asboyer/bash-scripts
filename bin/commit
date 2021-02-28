@@ -4,10 +4,6 @@ message=$1
 branch=$2
 remote=$3
 
-if [$remote == ""]; then
-	echo test
-fi
-
 echo adding changes ...
 git add .
 echo commiting changes ...
