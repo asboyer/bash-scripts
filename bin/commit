@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+message = $1
+echo "${message}"
 echo adding changes ...
 git add .
 echo commiting changes ...
