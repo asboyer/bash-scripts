@@ -11,6 +11,13 @@ fi
 echo adding changes ...
 git add .
 echo commiting changes ...
-git commit -m "automated commit"
+
+if [$message == ""]
+then
+	git commit -m "automated commit"
+else
+	git commit -m "$message"
+fi
+
 echo pushing changes ...
 git push origin master
