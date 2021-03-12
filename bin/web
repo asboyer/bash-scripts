@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+sudo webdriver-manager update
+echo 
+echo updated!
+echo
+echo starting webdriver-manager...
+echo 
+webdriver-manager start
+
