@@ -1,22 +1,43 @@
 #!/usr/bin/env bash
-input="/home/$USER/tasks.txt"
-
+tasks="/home/$USER/status/tasks.txt"
+goal="/home/$USER/status/goal.txt"
+DATE=`date +"%x"`
+TIME=`date +"%r"`
+HOUR=`date +"%H"`
 clear
-
 echo
-echo Hello, $USER!
+if [[ $HOUR -gt 19 ]]
+then
+	echo Good evening, $USER!
+else
+	if [[ $HOUR -gt 11 ]]
+	then
+		echo Good afternoon, $USER!
+	else
+		echo Good morning, $USER!
+	fi
+fi
 echo
+echo Date: $DATE
+echo Time: $TIME
 echo
 cal
-if [ -f "$input" ]; then
+if [ -f "$goal" ]; then
+	g=`cat ~/status/goal.txt`
+	echo A reminder that your goal is to \"$g\" 
+	echo
+else
+	:	
+fi
+if [ -f "$tasks" ]; then
 	echo Today\'s Tasks:
 	echo "------------------"
     while IFS= read -r line
 	do
 		echo "$line"
-	done < "$input"
+	done < "$tasks"
 	echo "------------------"
 	echo
 else 
-	echo
+	:
 fi
