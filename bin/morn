@@ -3,9 +3,9 @@ input="/Users/$USER/tasks.txt"
 
 clear
 
+echo
 echo Good morning, $USER!
 echo
-echo Here is today\'s calander date:
 echo
 cal
 if [ -f "$input" ]; then
