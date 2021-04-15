@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-input="/Users/$USER/tasks.txt"
+input="/home/$USER/tasks.txt"
 
 clear
 
 echo
-echo Good morning, $USER!
+echo Hello, $USER!
 echo
 echo
 cal
