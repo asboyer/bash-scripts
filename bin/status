@@ -4,16 +4,20 @@ goal="/home/$USER/status/goal.txt"
 DATE=`date +"%x"`
 TIME=`date +"%r"`
 HOUR=`date +"%H"`
-clear
-echo
 if [[ $HOUR -gt 19 ]]
 then
+	clear
+	echo
 	echo Good evening, $USER!
 else
 	if [[ $HOUR -gt 11 ]]
 	then
+		clear
+		echo
 		echo Good afternoon, $USER!
 	else
+		clear
+		echo
 		echo Good morning, $USER!
 	fi
 fi
