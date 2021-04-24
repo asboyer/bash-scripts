@@ -4,7 +4,7 @@ goal="/home/$USER/status/goal.txt"
 DATE=`date +"%x"`
 TIME=`date +"%r"`
 HOUR=`date +"%H"`
-if [[ $HOUR -gt 19 ]]
+if [[ $HOUR -gt 18 ]]
 then
 	clear
 	echo
