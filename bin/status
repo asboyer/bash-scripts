@@ -28,6 +28,7 @@ echo
 cal
 if [ -f "$goal" ]; then
 	g=`cat ~/status/goal.txt`
+	echo
 	echo A reminder that your goal is to \"$g\" 
 	echo
 else
