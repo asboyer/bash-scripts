@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+repo=$1
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+        path_to_key="/Users/$USER/.credentials/github_key.txt"
+else
+        path_to_key="/home/$USER/.credentials/github_key.txt"
+fi
+
+if [ -f "$path_to_key" ]; then
+    while IFS= read -r line
+    do
+        key="$line"
+    done < "$path_to_key"
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+        path_to_username="/Users/$USER/.credentials/github_username.txt"
+else
+        path_to_username="/home/$USER/.credentials/github_username.txt"
+fi
+
+if [ -f "$path_to_username" ]; then
+    while IFS= read -r line
+    do
+        user="$line"
+    done < "$path_to_username"
+fi
+
+git remote set-url origin "https://$key@github.com/$user/$repo.git"
