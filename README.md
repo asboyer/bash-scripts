@@ -8,8 +8,18 @@
     > - arg2 = files to add
     > - arg3 = branch name
     > - arg4 = remote name
-
-* ex: `commit` == `git add . && git commit -m "automated commit" && git push origin master`
+    ### Examples:
+    #### #1:
+    ```shell
+    commit
+    ```
+    is the same as
+    ```shell
+    git add .
+    git commit -m "automated commit
+    git push origin master
+    ``` 
+    * ex: `commit` == ` && " && `
     * ex: `commit "edited README" README.md` == `git add README.md && git commit -m "edited README" && git push origin master`
     * ex: `commit "edited main" main.py boyer-dev upstream` == `git add main.py && git commit -m "edited main" && git push upstream boyer-dev`
 
