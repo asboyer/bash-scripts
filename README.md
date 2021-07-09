@@ -9,9 +9,9 @@
 > - arg3 = branch name
 > - arg4 = remote name
 
-    - ex: `commit` == `git add . && git commit =m "automated commit" && git push origin master`
-    - ex: `commit "edited README" README.md` == `git add README.md && git commit -m "edited README" && git push origin master`
-    - ex: `commit "edited main" main.py boyer-dev upstream` == `git add main.py && git commit -m "edited main" && git push upstream boyer-dev`
+    * ex: `commit` == `git add . && git commit -m "automated commit" && git push origin master`
+    * ex: `commit "edited README" README.md` == `git add README.md && git commit -m "edited README" && git push origin master`
+    * ex: `commit "edited main" main.py boyer-dev upstream` == `git add main.py && git commit -m "edited main" && git push upstream boyer-dev`
 
 * **libclean:** will delete the `dist` `build` and `egg-info` directories made when creating a python package (useful for quickly cleaning up enviroment after creating a python package)
 * **update:** will execute `sudo apt update && sudo apt upgrade` (useful for quickly updating and upgrading computer in one command)
