@@ -8,8 +8,10 @@
     > - arg2 = files to add
     > - arg3 = branch name
     > - arg4 = remote name
+    > *all arguments are optional*
+    
     ### Examples:
-    #### #1:
+    #### Example #1:
     ```shell
     commit
     ```
@@ -19,9 +21,29 @@
     git commit -m "automated commit
     git push origin master
     ``` 
-    * ex: `commit` == ` && " && `
-    * ex: `commit "edited README" README.md` == `git add README.md && git commit -m "edited README" && git push origin master`
-    * ex: `commit "edited main" main.py boyer-dev upstream` == `git add main.py && git commit -m "edited main" && git push upstream boyer-dev`
+
+    #### Example #2:
+    ```shell
+    commit "edited README" README.md
+    
+    ```
+    is the same as
+    ```shell
+    git add README.md
+    git commit -m "edited README"
+    git push origin master
+    ```
+
+    #### Example #3:
+    ```shell
+    commit "edited main" main.py boyer-dev upstream
+    ```
+    is the same as
+    ```shell
+    git add main.py
+    git commit -m "edited main"
+    git push upstream boyer-dev
+    ```
 
 * **libclean:** will delete the `dist` `build` and `egg-info` directories made when creating a python package (useful for quickly cleaning up enviroment after creating a python package)
 * **update:** will execute `sudo apt update && sudo apt upgrade` (useful for quickly updating and upgrading computer in one command)
