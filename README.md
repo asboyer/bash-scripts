@@ -15,7 +15,7 @@
     ```shell
     commit
     ```
-    is the same as
+    executes these commands:
     ```shell
     git add .
     git commit -m "automated commit
@@ -27,7 +27,7 @@
     commit "edited README" README.md
     
     ```
-    is the same as
+    executes these commands:
     ```shell
     git add README.md
     git commit -m "edited README"
@@ -38,7 +38,7 @@
     ```shell
     commit "edited main" main.py boyer-dev upstream
     ```
-    is the same as
+    executes these commands:
     ```shell
     git add main.py
     git commit -m "edited main"
