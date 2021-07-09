@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
 message=$1
-branch=$2
-remote=$3
+add=$2
+branch=$3
+remote=$4
 
 # adds ALL changes
 echo adding changes ...
-git add .
+if [ "$add" == "" ]
+then
+    git add .
+else
+    git add "$add"
+fi
 
 # commits changes
 echo commiting changes ...
