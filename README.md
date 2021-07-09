@@ -4,10 +4,10 @@
 ## Scripts:
 * **commit:** will execute `git add .` `git commit -m "message"` and `git push origin master` all at once (useful for quickly updating a repository) 
 
-> - arg1 = commit message
-> - arg2 = files to add
-> - arg3 = branch name
-> - arg4 = remote name
+    > - arg1 = commit message
+    > - arg2 = files to add
+    > - arg3 = branch name
+    > - arg4 = remote name
 
 * ex: `commit` == `git add . && git commit -m "automated commit" && git push origin master`
     * ex: `commit "edited README" README.md` == `git add README.md && git commit -m "edited README" && git push origin master`
