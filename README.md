@@ -48,6 +48,8 @@
 * **libclean:** will delete the `dist` `build` and `egg-info` directories made when creating a python package (useful for quickly cleaning up enviroment after creating a python package)
 * **update:** will execute `sudo apt update && sudo apt upgrade` (useful for quickly updating and upgrading computer in one command)
 
+*Note that `chrome`, `update`, and `web` only run in linux*
+
 ## Using these scripts:
 * `git clone https://github.com/asboyer2/bash-scripts.git`
 * add `/path/to/bash-scripts/bin` to your `$PATH` variable in your `.bashrc
