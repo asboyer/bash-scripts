@@ -5,6 +5,7 @@ DATE=`date +"%x"`
 TIME=`date +"%r"`
 HOUR=`date +"%H"`
 if [[ $HOUR -gt 18 ]]
+# need to add some kind of or less than 12:00 am - 3 am
 then
 	clear
 	echo
