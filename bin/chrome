@@ -4,4 +4,4 @@ google-chrome &
 sleep 0.5
 clear
 echo "New chrome window opened!"
-
+exit
