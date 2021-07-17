@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+
+
+message=$1
+
+if [ "$message" == "" ]; then
+	message="updating tasks and goals"
+fi
+gnome-terminal -q -e "bash -c \"cd /home/$USER/dashboard; git pull origin master; git add .; git commit -m '$message'; git push origin master; exit; exec bash\";"
+
+
