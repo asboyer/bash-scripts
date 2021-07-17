@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-tasks="/home/$USER/status/tasks.txt"
-goal="/home/$USER/status/goal.txt"
+tasks="/home/$USER/dashboard/tasks.txt"
+goal="/home/$USER/dashboard/goal.txt"
 DATE=`date +"%x"`
 TIME=`date +"%r"`
 HOUR=`date +"%H"`
@@ -23,7 +23,7 @@ echo Time: $TIME
 echo
 cal
 if [ -f "$goal" ]; then
-    g=`cat ~/status/goal.txt`
+    g=`cat $goal`
     echo
     echo A reminder that your goal is to \"$g\" 
     echo
