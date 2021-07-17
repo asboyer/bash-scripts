@@ -7,7 +7,7 @@ HOUR=`date +"%H"`
 clear
 echo
 if [ $HOUR -gt 18 ] || [ $HOUR -lt 1 ]; then
-	echo Good evening, $USER!
+    echo Good evening, $USER!
 elif [ $HOUR -lt 5 ]; then
 	echo Good night, $USER! Get some sleep!
 else
