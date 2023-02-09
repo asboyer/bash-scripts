@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+tasks="/Users/$USER/dashboard/tasks.txt"
+goal="/Users/$USER/dashboard/goal.txt"
+DATE=`date +"%x"`
+TIME=`date +"%r"`
+HOUR=`date +"%H"`
+clear
+echo
+if [ $HOUR -gt 18 ] || [ $HOUR -lt 1 ]; then
+    echo Good evening, $USER!
+elif [ $HOUR -lt 5 ]; then
+    echo Good night, $USER! Get some sleep!
+else
+    if [[ $HOUR -gt 11 ]]; then
+        echo Good afternoon, $USER!
+    else
+        echo Good morning, $USER!
+    fi
+fi
+echo
+echo Date: $DATE
+echo Time: $TIME
+echo
+
+
+#!/bin/bash
+
+current_date=$(date +"%Y-%m-%d")
+start_of_year=$(date +"%Y-01-01")
+
+# Get the total number of seconds between the current date and the start of the year
+total_seconds=$(gdate -d "$current_date" +%s)
+start_seconds=$(gdate -d "$start_of_year" +%s)
+elapsed_seconds=$((total_seconds - start_seconds))
+
+# Get the total number of seconds in a year (365 days)
+seconds_in_a_year=$((365 * 24 * 60 * 60))
+
+# Calculate the percentage of the year that has passed
+percent_complete=$((100 * elapsed_seconds / seconds_in_a_year))
+# echo $percent_complete
+
+
+# Calculate the number of characters to display in the bar
+bar_length=$((percent_complete/5))
+# echo $bar_length
+
+# Display the bar
+# echo -n "["
+
+if [ $bar_length == 0 ]; then
+    bar_length=$((bar_length + 1))
+fi
+
+for i in $(seq 1 $bar_length); do
+  echo -n "▓"
+done
+for i in $(seq $((bar_length + 1)) 20); do
+  echo -n "░"
+done
+echo -n " $percent_complete%"
+echo
+
+
+echo
+cal
+if [ -f "$goal" ]; then
+    echo GOALS:
+    echo "------------------"
+    while IFS= read -r line
+    do
+        echo "* ${line}"
+    done < "$goal"
+    echo "------------------"
+    echo
+else 
+    :
+fi
+
+if [ -f "$tasks" ]; then
+    echo TASKS:
+    echo "------------------"
+    while IFS= read -r line
+    do
+        if [[ "${line:0:1}" == "X" ]]; then
+            echo "[X]${line:1}"
+        else
+            echo "[ ] ${line}"
+        fi
+    done < "$tasks"
+    echo "------------------"
+    echo
+else 
+    :
+fi

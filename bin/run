@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+file=$1
+
+# echo "compiling $file.java..."   
+javac "$file.java"
+java $file

@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+
+task=$1
+task2=$2
+filename="/Users/$USER/dashboard/tasks.txt"
+filename2="/Users/$USER/dashboard/task_backup.txt"
+first_letter="${task:0:1}"
+
+if [ "$task" == "edit" ]; then
+    vim "/Users/$USER/dashboard/tasks.txt"
+
+elif [ "$task" == "goals" ]; then
+    vim "/Users/$USER/dashboard/goal.txt"
+
+elif [ "$task" == "cls" ]; then
+    tmp_file=$(mktemp /Users/baller/dashboard/temp.XXXXXX)
+    tmp_file2=$(mktemp /Users/baller/dashboard/temp.XXXXXX)
+
+    while IFS= read -r line
+    do
+        echo "${line}" >> "$tmp_file2"
+        done < "$filename2"
+
+    while IFS= read -r line
+    do
+        if [[ "${line:0:1}" != "X" ]]; then
+            echo "$line" >> "$tmp_file"
+        else
+            echo "${line:2}" >> "$tmp_file2"
+        fi
+        done < "$filename"
+    mv "$tmp_file" "$filename"
+    mv "$tmp_file2" "$filename2"
+
+elif [ "$(echo "${first_letter}" | tr '[:upper:]' '[:lower:]')" == "x" ]; then
+    tmp_file=$(mktemp /Users/baller/dashboard/temp.XXXXXX)
+    while IFS= read -r line
+    do
+        if [[ "$(echo "${line:0:3}" | tr '[:upper:]' '[:lower:]')"  == "$(echo "${task2:0:3}" | tr '[:upper:]' '[:lower:]')" ]]; then
+            echo "X ${line}" >> "$tmp_file"
+        else
+            echo "$line" >> "$tmp_file"
+        fi
+        done < "$filename"
+    mv "$tmp_file" "$filename"
+# elif [[ "$task" =~ $re ]] ; then
+#     sed -i "${task}s/^/${text_to_prepend}/" "/Users/b${filename}"
+else
+    echo "${task} ${task2}" >> "/Users/$USER/dashboard/tasks.txt"
+fi
+

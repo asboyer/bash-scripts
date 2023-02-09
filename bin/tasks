@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-task=$1
-
-if [ "$task" == "" ]; then
-    vim "/home/$USER/dashboard/tasks.txt"
-else
-    echo "$task" >> "/home/$USER/dashboard/tasks.txt"
-fi

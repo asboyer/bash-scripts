@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-repo=$1
+repo=${PWD##*/}
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
         path_to_key="/Users/$USER/.credentials/github_key.txt"
@@ -28,4 +28,9 @@ if [ -f "$path_to_username" ]; then
     done < "$path_to_username"
 fi
 
-git clone "https://$key@github.com/$user/$repo.git"
+git init
+echo "# $repo" >> README.md
+git add .
+git commit -m "first commit"
+git branch -M master
+git remote add origin "https://$key@github.com/$user/$repo.git"
