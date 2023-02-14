@@ -10,6 +10,8 @@ first_letter="${task:0:1}"
 if [ "$task" == "edit" ]; then
     vim "/Users/$USER/dashboard/tasks.txt"
 
+elif [ "$task" == "" ]; then
+    db
 elif [ "$task" == "goals" ]; then
     vim "/Users/$USER/dashboard/goal.txt"
 
